@@ -1018,15 +1018,15 @@ Objects in a collection also works:
 
 [source,ocaml]
 -------------
-let xs = [%bs.obj [| { x = 3 } ; {x = 3 } |] : < x : int  > array  ]
-let ys = [%bs.obj [| { x = 3} : { x = 4 } |] ]
+let xs = [%bs.obj [| { x = 3 } ; { x = 3 } |] : < x : int  > array  ]
+let ys = [%bs.obj [| { x = 3 } ; { x = 4 } |] ]
 -------------
 
 Output:
 [source,js]
 ---------------------------------
-var xs = [ { x : 3 } , { x : 3 }]
-var ys = [ { x : 3 },  {x : 4 } ]
+var xs = [ { x : 3 } , { x : 3 } ]
+var ys = [ { x : 3 } , { x : 4 } ]
 ---------------------------------
 
 #### Create JS objects using external
@@ -1041,7 +1041,7 @@ let v = make_config ~hi:2 ~lo:3
 Output:
 [source,js]
 -----------------------
-var v = { hi:2, lo:3}
+var v = { hi : 2 , lo : 3 }
 -----------------------
 
 Option argument is also supported:
@@ -1081,10 +1081,10 @@ Output:
 [source,js]
 -----------------------------------------------------------------
 
-var u = { x : { y : {z : 3}}, fn : function (u,v) {return u + v}}
+var u = { x : { y : { z : 3 } }, fn : function (u, v) {return u + v}}
 var h = u.x.y.z
 var a = h.fn
-var b = a(1,2)
+var b = a(1, \2)
 -----------------------------------------------------------------
 
 [NOTE]
